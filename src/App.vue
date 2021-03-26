@@ -40,6 +40,7 @@ export default {
                                 {
                                     word_id: 0,
                                     lexeme: 'Complain',
+                                    type: 'verb',
                                     intransitive: true,
                                     meaning: [
                                         'when you complain you say that you are not satisfied with it;',
@@ -53,6 +54,7 @@ export default {
                                     lexeme: 'Remonstrate (with sb) (about sth)',
                                     intransitive: true,
                                     transitive: true,
+                                    type: 'verb',
                                     formal: true,
                                     meaning:[ 'you protest them about something you do not approve of or agree with and you try to get it changed or stopped'],
                                     shade: 'YOU DO NOT APPROVE AND WANT IT STOPPED OR CHANGED',
@@ -66,6 +68,7 @@ export default {
                                     word_id: 2,
                                     lexeme: 'expostulate',
                                     intransitive: true,
+                                    type: 'verb',
                                     formal: true,
                                     meaning: ['to express strong disagreement with someone'],
                                     shade: 'STRONG DISAGREEMENT',
@@ -83,6 +86,7 @@ export default {
                                             intransitive: true,
                                             informal: true,
                                             dissaproving: true,
+                                            type: 'verb',
                                             meaning: [
                                                 'complain about in a way which makes them sound weak and irritating',
                                             ],

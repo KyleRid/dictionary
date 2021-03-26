@@ -42,6 +42,8 @@ export default {
     border: 1px solid #eaeaea;
     border-radius: 5px;
     text-transform: lowercase;
+     /* background-color: rgb(65, 234, 136, 0.55); */
+      background-color: #a6ffcb8c;
 }
 
 .group .group {

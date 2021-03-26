@@ -1,11 +1,25 @@
 <template>
 <div class="word" @click="toggleMeaning">
     <div class="word__meta">
-        <div class="word__meta-item word__type">{{this.word.type}}</div>
-        <div class="word__meta-item word__transitivity">
-            <span class="word__intransitive" v-if="word.intransitive">I</span>
-            <span class="word__transitive" v-if="word.transitive">T</span>
-            <span class="word__formal" v-if="word.formal">F</span>
+        <div class="word__meta-item word-type"
+            :class="{
+                'word-type_verb': this.word.type === 'verb',
+                'word-type_noun': this.word.type === 'noun',
+                }">{{this.word.type || 'no type'}}</div>
+        <div class="word__meta-item word__meta-item_intransitive" v-if="word.intransitive">
+            I
+        </div>
+        <div class="word__meta-item word__meta-item_transitive" v-if="word.transitive">
+            T
+        </div>
+
+        <div class="word__meta-item word-style">
+            <div class="word-style__formal"  v-if="word.formal">
+            F
+            </div>
+            <div class="word-style__formal"  v-if="word.informal">
+                Inf
+            </div>
         </div>
     </div>
     <slot></slot>
@@ -79,7 +93,7 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%);
-    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
 .word-meaning__close {
@@ -133,15 +147,21 @@ export default {
 	display: flex;
 	position: relative;
 	padding: 25px 10px 10px;
-	border: 1px solid #eaeaea;
+	/* border: 1px solid #eaeaea; */
 	margin: 0 5px;
 	font-size: 30px;
     flex-direction: column;
+    /* background-color: rgb(65, 234, 136, 0.55); */
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+    border-radius: 15px;
+    transition: 0.25s ease-in-out all;
 }
 
 .word:hover {
     cursor: pointer;
     user-select: none;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    transition: 0.25s ease-in-out all;
 }
 
 .word__meta {
@@ -157,6 +177,40 @@ export default {
 .word__meta-item {
     margin-right: 5px;
     /* font-family: sans-serif; */
+}
+
+.word__meta-item_intransitive {
+    padding: 2px 5px;
+    border-radius: 5px;
+    background-color: #f3f30e;
+}
+
+.word__meta-item_transitive {
+    padding: 2px 5px;
+    border-radius: 5px;
+    background-color: #53dc51;
+}
+
+.word-type_verb {
+    background: #ff6d6d;
+    /* color: #ff6d6d; */
+    color: black;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.word-type_noun {
+    background-color: rgb(156, 145, 251);
+}
+
+.word-style {
+    margin-left: auto;
+}
+
+.word-style__formal {
+    padding: 2px 5px;
+    border-radius: 5px;
+    background-color: #f3f30e;
 }
 
 /* .word__meta-item span { */

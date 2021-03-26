@@ -39,7 +39,7 @@ export default {
 }
 
 .row {
-	background-color: rgb(65, 234, 136, 0.7);
+	/* background-color: rgb(65, 234, 136, 0.7); */
 }
 
 .row__words {
